@@ -13,7 +13,7 @@ public class ByteExample {
 		Integer(6);
 	}
 	public static void Integer(int a) {
-		int var[] = {-300,-100,10,0,10,100,300};
+		int var[] = {-350,-100,10,0,10,100,500};
 		for(int i=0;i<a;i++) {
 			System.out.println("int var"+(i+1)+" = "+var[i]);
 		}
