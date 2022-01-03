@@ -10,5 +10,6 @@ public class LongeExample {
 		System.out.println(var1);
 		System.out.println(var2);
 		System.out.println(var4);
+		System.out.println(Double.MAX_VALUE);
 	}
 }
