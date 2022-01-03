@@ -1,1 +1,0 @@
-# jungang_school
