@@ -19,7 +19,6 @@ public class IfNestedExample {
 				grade = "B";
 			}
 		}
-		System.out.println("합점: " + grade);
-
+		System.out.println("학점: " + grade);
 	}
 }
