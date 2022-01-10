@@ -5,9 +5,9 @@ public class TestScore {
 	public static void main(String[] args) {
 		// 변수 선언
 		// 김유신 점수
-		int kor1 = (int) (Math.random() * 40) + 60;
-		int eng1 = (int) (Math.random() * 40) + 60;
-		int math1 = (int) (Math.random() * 40) + 60;
+		int kor1 = (int) (Math.random() * 41) + 60;
+		int eng1 = (int) (Math.random() * 41) + 60;
+		int math1 = (int) (Math.random() * 41) + 60;
 		int sum1 = kor1 + eng1 + math1;
 		double avg1 = (double) sum1 / 3.0;
 		double avgF1;
@@ -19,12 +19,12 @@ public class TestScore {
 		} else {
 			avgF1 = (avgP12 + 10) / 100.0;
 		}
-		int rank1 = 2;
+		int rank1 = 0;
 
 		// 강감찬 점수
-		int kor2 = (int) (Math.random() * 40) + 60;
-		int eng2 = (int) (Math.random() * 40) + 60;
-		int math2 = (int) (Math.random() * 40) + 60;
+		int kor2 = (int) (Math.random() * 41) + 60;
+		int eng2 = (int) (Math.random() * 41) + 60;
+		int math2 = (int) (Math.random() * 41) + 60;
 		int sum2 = kor2 + eng2 + math2;
 		double avg2 = (double) sum2 / 3.0;
 		double avgF2;
@@ -36,12 +36,12 @@ public class TestScore {
 		} else {
 			avgF2 = (avgP22 + 10) / 100.0;
 		}
-		int rank2 = 2;
+		int rank2 = 0;
 
 		// 이순신 점수
-		int kor3 = (int) (Math.random() * 40) + 60;
-		int eng3 = (int) (Math.random() * 40) + 60;
-		int math3 = (int) (Math.random() * 40) + 60;
+		int kor3 = (int) (Math.random() * 41) + 60;
+		int eng3 = (int) (Math.random() * 41) + 60;
+		int math3 = (int) (Math.random() * 41) + 60;
 		int sum3 = kor3 + eng3 + math3;
 		double avg3 = (double) sum3 / 3.0;
 		double avgF3;
@@ -53,12 +53,12 @@ public class TestScore {
 		} else {
 			avgF3 = (avgP32 + 10) / 100.0;
 		}
-		int rank3 = 2;
+		int rank3 = 0;
 
 		// 홍길동 점수
-		int kor4 = (int) (Math.random() * 40) + 60;
-		int eng4 = (int) (Math.random() * 40) + 60;
-		int math4 = (int) (Math.random() * 40) + 60;
+		int kor4 = (int) (Math.random() * 41) + 60;
+		int eng4 = (int) (Math.random() * 41) + 60;
+		int math4 = (int) (Math.random() * 41) + 60;
 		int sum4 = kor4 + eng4 + math4;
 		double avg4 = (double) sum4 / 3.0;
 		double avgF4;
@@ -70,12 +70,12 @@ public class TestScore {
 		} else {
 			avgF4 = (avgP42 + 10) / 100.0;
 		}
-		int rank4 = 2;
+		int rank4 = 0;
 
 		// 정약용 점수
-		int kor5 = (int) (Math.random() * 40) + 60;
-		int eng5 = (int) (Math.random() * 40) + 60;
-		int math5 = (int) (Math.random() * 40) + 60;
+		int kor5 = (int) (Math.random() * 41) + 60;
+		int eng5 = (int) (Math.random() * 41) + 60;
+		int math5 = (int) (Math.random() * 41) + 60;
 		int sum5 = kor5 + eng5 + math5;
 		double avg5 = (double) sum5 / 3.0;
 		double avgF5;
@@ -87,7 +87,7 @@ public class TestScore {
 		} else {
 			avgF5 = (avgP52 + 10) / 100.0;
 		}
-		int rank5 = 2;
+		int rank5 = 0;
 
 		// 등수 처리
 		if (sum1 < sum2) { // sum1이 sum2보다 작을 때
@@ -386,7 +386,7 @@ public class TestScore {
 		}
 
 		else { // sum1이 sum2보다 클 때
-			if (sum1 < sum3) {
+			if (sum1 < sum3) { // sum1이 sum2보다 크고, sum3보다 작을 때
 				if (sum1 < sum4) { // sum1이 sum2보다 크고, sum3/sum4보다 작을 때
 					if (sum1 < sum5) { // sum1이 sum2보다 크고, sum3/sum4/sum5 보다 작을 때
 						rank2 = 5;
@@ -460,6 +460,48 @@ public class TestScore {
 						}
 					}
 				}
+			} else { // sum1이 sum2/sum3보다 클 때
+				if (sum1 < sum4) {
+					if (sum1 < sum5) { // sum1이 sum2/sum3 보다 크고 sum4/sum5보다 작을 때
+						rank1 = 3;
+						if (sum2 < sum3) {
+							rank2 = 5;
+							rank3 = 4;
+							if (sum4 < sum5) {
+								rank4 = 2;
+								rank5 = 1;
+							} else {
+								rank5 = 2;
+								rank4 = 1;
+							}
+						} else {
+							rank2 = 4;
+							rank3 = 5;
+							if (sum4 < sum5) {
+								rank4 = 2;
+								rank5 = 1;
+							} else {
+								rank5 = 2;
+								rank4 = 1;
+							}
+						}
+					}else { // sum1이 sum2/sum3/sum5 보다 크고 sum4보다 작을 때
+						rank4=1;
+						rank1=2;
+						if(sum2<sum3) {
+							if(sum2<sum5) {
+								rank2=5;
+								if(sum3<sum5) {
+									rank5=3;
+									rank3=4;
+								}else {
+									rank3=3;
+									rank5=4;
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 
@@ -472,14 +514,14 @@ public class TestScore {
 		System.out.println("이름     국어성적  영어성적  수학성적  합계    평균    등수 ");
 		System.out.println("========================================");
 		System.out.println(
-				"김유신       " + kor1 + "    " + eng1 + "     " + math1 + "   " + sum1 + "  " + avgF1 + "  " + rank1);
+				"김유신       " + kor1 + "     " + eng1 + "     " + math1 + "   " + sum1 + "  " + avgF1 + "  " + rank1);
 		System.out.println(
-				"강감찬       " + kor2 + "    " + eng2 + "     " + math2 + "   " + sum2 + "  " + avgF2 + "  " + rank2);
+				"강감찬       " + kor2 + "     " + eng2 + "     " + math2 + "   " + sum2 + "  " + avgF2 + "  " + rank2);
 		System.out.println(
-				"이순신       " + kor3 + "    " + eng3 + "     " + math3 + "   " + sum3 + "  " + avgF3 + "  " + rank3);
+				"이순신       " + kor3 + "     " + eng3 + "     " + math3 + "   " + sum3 + "  " + avgF3 + "  " + rank3);
 		System.out.println(
-				"홍길동       " + kor4 + "    " + eng4 + "     " + math4 + "   " + sum4 + "  " + avgF4 + "  " + rank4);
+				"홍길동       " + kor4 + "     " + eng4 + "     " + math4 + "   " + sum4 + "  " + avgF4 + "  " + rank4);
 		System.out.println(
-				"정약용       " + kor5 + "    " + eng5 + "     " + math5 + "   " + sum5 + "  " + avgF5 + "  " + rank5);
+				"정약용       " + kor5 + "     " + eng5 + "     " + math5 + "   " + sum5 + "  " + avgF5 + "  " + rank5);
 	}
 }
