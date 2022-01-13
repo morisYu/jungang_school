@@ -75,30 +75,48 @@ public class TestScoreAnalasysProgram {
 		System.out.println("국어합계: " + sumKor + " / 영어합게: " + sumEng + " / 수학합계: " + sumMat);
 		System.out.println("국어평균: " + avgKor + " / 영어평균: " + avgEng + " / 수학평균: " + avgMat);
 		System.out.println();
+		System.out.println("----------------\n");
 		System.out.println("< 개인 성적 통계 >");
 		for (int i = 0; i < studentNo; i++) {
 			sum[i] = kor[i] + eng[i] + mat[i];
 		}
 		for (int i = 0; i < studentNo; i++) {
-			avg[i] = average1point((double) sum[i] / 3.0);
+			avg[i] = average1point((double) sum[i] / 3);
 		}
 		for (int i = 0; i < studentNo; i++) {
 			System.out.println("이름: " + name[i] + " / 국어: " + kor[i] + " / 영어: " + eng[i] + " / 수학: " + mat[i]
 					+ " / 합계: " + sum[i] + " / 평균: " + avg[i]);
 		}
-
+		System.out.println();
+		System.out.println("----------------\n");
 		// 석차
-		int[] rank = new int[studentNo];
-		int max = sum[0];
-		for (int i = 0; i < studentNo; i++) {
-			for (int j = 0; j < studentNo - i; j++) {
-				if (max < sum[i]) {
-					max = sum[i];
+		int maxS = 0;
+		String maxN = new String();
+		int x = 0;
 
+		for (int i = 0; i < studentNo; i++) {
+			maxS = sum[i];
+			x = i;
+			for (int j = i; j < studentNo; j++) {
+				if (maxS < sum[j]) {
+					maxS = sum[j];
+					maxN = name[j];
+					x = j;
 				}
 			}
-			rank[studentNo - i] = 5;
+			int tmpS = sum[i];
+			String tmpN = name[i];
+			sum[i] = maxS;
+			name[i] = maxN;
+			sum[x] = tmpS;
+			name[x] = tmpN;
 		}
+		for (int i = 0; i < studentNo; i++) {
+			System.out.println(name[i] + " : " + sum[i]);
+		}
+
+		System.out.println();
+		System.out.println("----------------\n");
 
 	}
 

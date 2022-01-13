@@ -26,10 +26,12 @@ public class ArrayEx8 {
 		System.out.println();
 
 		sum = kor[0] + eng[0] + mat[0];
+		avg = sum / 3;
 
 		System.out.println("학생이름: " + name[0]);
 		System.out.println("국어: " + kor[0] + ", 영어: " + eng[0] + ", 수학: " + mat[0]);
 		System.out.println("합계: " + sum);
+		System.out.println("평균: " + avg);
 
 	}
 }
