@@ -12,15 +12,16 @@ public class ScoreArray {
 		this.number = number;
 		score = new int[number];
 		name = new String[number];
-		System.out.println("사용 가능한 Method");
+		System.out.println("*****         사용 가능한 Method         *****");
 		System.out.println("scoreInput() / scoreSorting() / nameInput()");
+		System.out.println("======================");
 	}
 
 	void nameInput() {
 		System.out.println(number + " 명의 이름을 입력하세요.");
 		for (int i = 0; i < number; i++) {
 			System.out.print("입력 > ");
-			name[i] = scanner.nextLine();
+			name[i] = scanner.next();
 		}
 		System.out.println("======================");
 		for (int i = 0; i < number; i++) {
@@ -44,7 +45,7 @@ public class ScoreArray {
 
 	void scoreSorting() {
 		if (score[0] == 0 || name[0] == null) {
-			System.out.println("점수/이름을 먼저 입력하세요.");
+			System.out.println("이름/점수를 먼저 입력하세요.");
 			return;
 		}
 		for (int i = 0; i < number; i++) {
@@ -64,8 +65,10 @@ public class ScoreArray {
 			name[i] = name[count];
 			name[count] = tmpS;
 		}
+		System.out.println("======================");
 		for (int i = 0; i < number; i++) {
 			System.out.println((i + 1) + " 등 이름: " + name[i] + " / 점수: " + score[i]);
 		}
+		System.out.println("======================");
 	}
 }
