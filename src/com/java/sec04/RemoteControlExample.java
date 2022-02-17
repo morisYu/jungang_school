@@ -2,7 +2,7 @@ package com.java.sec04;
 
 public class RemoteControlExample {
 	public static void main(String[] args) {
-		RemoteControl rc;
+		RemoteControl rc=null;
 		
 		rc = new Television();
 		rc.turnOn();  // 추상메소드 오버라이드 후 호출
